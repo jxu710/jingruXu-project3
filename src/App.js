@@ -35,7 +35,7 @@ function App() {
       setPictures(newState);
     })
 
-    SetLoading(false)
+
   
   },[])
 
@@ -45,10 +45,10 @@ function App() {
 
   
       {
-       pictures.map( (pics) => {
+       pictures.map( (pics,index) => {
          return(
           //  <li>
-           <img src={pics} onClick={add}/>
+           <img src={pics} onClick={add} key={index}/>
           //  {/* </li> */}
          )
        })
@@ -58,10 +58,10 @@ function App() {
 
 
 
-      {/* <i className="fa-solid fa-cart-shopping">
+      <i className="fa-solid fa-cart-shopping">
 
         <p>{count}</p>
-      </i> */}
+      </i>
 
 
       

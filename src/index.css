@@ -51,6 +51,7 @@ img{
   border-radius: 20px;
   position: relative;
   border: darkcyan 2px double;
+  transition: all 1s ease;
 }
 
 img:hover{
