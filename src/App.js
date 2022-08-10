@@ -48,7 +48,7 @@ function App() {
        pictures.map( (pics,index) => {
          return(
           //  <li>
-           <img src={pics} onClick={add} key={index}/>
+           <img src={pics} onClick={add} key={index} alt="mugs"/>
           //  {/* </li> */}
          )
        })
