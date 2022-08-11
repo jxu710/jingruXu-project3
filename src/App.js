@@ -4,7 +4,8 @@ import firebase from './firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useState, useEffect } from 'react';
 
-import Header from './Header';
+import Header from './components/Header';
+
 
 function App() {
   const [pictures, setPictures] = useState([]);
@@ -23,12 +24,9 @@ function App() {
     }
   }
 
-
   const handleCart = function(){
     setCart(!openCart)
   }
-
-  
 
 
   useEffect(()=>{
@@ -52,14 +50,12 @@ function App() {
 
       setPictures(newState);
     })
-
   },[])
 
   return (
     <div className="App">
 
       <Header handleCart={handleCart} count ={count} />
-  
       {
        pictures.map( (pics,index) => {
          return(
@@ -74,9 +70,9 @@ function App() {
          )
         })
       }
-       
 
-
+  
+  
 
       {/* when open shopping cart */}
       <nav className={openCart && 'cart'}>
@@ -91,6 +87,9 @@ function App() {
         </ul>
       </nav>
       
+      <footer>
+        <p> Created at Juno</p>
+      </footer>
     </div>
   );
 
