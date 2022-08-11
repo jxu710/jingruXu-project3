@@ -78,10 +78,6 @@ function App() {
       <nav className={openCart && 'cart'}>
         <ul>
           <li><img className='imgAdded' src={pictures[1]} alt="" /></li>
-          <li>b</li>
-          <li>c</li>
-          <li>d</li>
-          <li>e</li>
           <li onClick={handleCart} className={openCart && 'cart'}>x</li>
           <p> Your total Amount:</p>
         </ul>
