@@ -4,6 +4,7 @@ import firebase from './firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useState, useEffect } from 'react';
 
+import Header from './Header';
 
 function App() {
   const [pictures, setPictures] = useState([]);
@@ -26,6 +27,8 @@ function App() {
   const handleCart = function(){
     setCart(!openCart)
   }
+
+  
 
 
   useEffect(()=>{
@@ -54,16 +57,8 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Welcome to the store!!!</h1>
 
-        {/* <button onClick={add}>add to cart</button> */}
-
-        {/* <button onClick={minus}>−</button> */}
-      </header>
-
-
-      
+      <Header handleCart={handleCart} count ={count} />
   
       {
        pictures.map( (pics,index) => {
@@ -71,33 +66,28 @@ function App() {
           //  <li>
           <div className='imgContainer'>
             <img src={pics} key={index} alt="mugs"/>
-            <button onClick={add}>add to cart</button>
-            <button onClick={minus}>Delete</button>
-            
+            <button onClick={add} key={index}>add to cart</button>
+            <button onClick={minus} key={index}>Delete</button>
+            <figcaption>$5</figcaption>
           </div>
-            
           //  {/* </li> */}
          )
-       })
+        })
       }
-    
        
 
-        <i className="fa-solid fa-cart-shopping " onClick={handleCart}>
-
-        <p onClick={handleCart}>{count} </p>
-      </i>
 
 
       {/* when open shopping cart */}
       <nav className={openCart && 'cart'}>
         <ul>
-          <li>a</li>
+          <li><img className='imgAdded' src={pictures[1]} alt="" /></li>
           <li>b</li>
           <li>c</li>
           <li>d</li>
           <li>e</li>
-          <li className={openCart && 'cart'}>x</li>
+          <li onClick={handleCart} className={openCart && 'cart'}>x</li>
+          <p> Your total Amount:</p>
         </ul>
       </nav>
       

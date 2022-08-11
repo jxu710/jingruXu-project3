@@ -16,13 +16,14 @@ code {
 
 header{
   height: 50vh;
-  background-image: url(./images/rhamely-5CON5zCHDOY-unsplash.jpg);
+  background-image: url(images/annie-spratt-VvE9lcIQ5Xo-unsplash.jpg);
 }
 
 h1{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
 }
+
 
 
 i{
@@ -34,20 +35,13 @@ i{
   cursor: pointer;
   padding: 10px;
   font-size: 3rem;
-  /* transform:skewX(20deg); */
   transition: all 1s;
   z-index: 1;
 }
 
 i:hover{
-  /* transform:skewX(-20deg); */
   transform: translateX(20px);
 }
-
-/* li{
-  list-style: none;
-  width: 90vh;
-} */
 
 
 img{
@@ -93,7 +87,7 @@ img ~ button{
 
 /* open shopping cart */
 .cart{
-  opacity: 1;
+  visibility: visible;
 }
 
 nav{
@@ -101,9 +95,9 @@ nav{
   width: 20%;
   position: absolute;
   top: 10%;
-  right: 0px;
-  /* z-index: 1000; */
-  opacity: 0;
+  left: 0px;
+  /* z-index: 2; */
+  visibility: hidden;
 }
 
 nav li{
@@ -114,6 +108,16 @@ nav li:last-of-type{
   position: absolute;
   top: 0;
   cursor: pointer;
-  background-color: slateblue;
+  background-color: palegoldenrod;
   padding: 10px;
+
+}
+
+.imgAdded{
+  border: none;
+}
+
+
+figcaption{
+  display: inline;
 }
