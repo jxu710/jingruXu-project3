@@ -1,6 +1,5 @@
 
 // Header Component
-import logo from '../images/daniel-lincoln-ho7ZZF2ebcU-unsplash.jpg'
 
 const Header = (props) =>{
     return(
