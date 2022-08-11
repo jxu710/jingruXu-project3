@@ -32,8 +32,7 @@ header{
 
 h1{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: white;
-  opacity: 1;
+  padding-top: 100px;
 }
 
 /* .logo{
@@ -73,7 +72,7 @@ img{
   border-radius: 20px;
   border: darkcyan 2px double;
   transition: all 0.5s ease;
-  background-color: lightcyan;
+  background-color: lightgrey;
 }
 
 img:hover{
@@ -92,20 +91,23 @@ p{
   position: relative;
 }
 
-img + button{
+.buttonContainer{
+  display: inline-block;
+}
+/* img + button{
   position: absolute;
-  left: 30%;
-  bottom:200px;
+  left: 0;
+  bottom:0;
   padding: 10px;
 }
 
 
 img ~ button{
   position: absolute;
-  right: 32%;
-  bottom: 20%;
+  right: 0;
+  bottom: 0;
   padding: 10px;
-}
+} */
 
 
 /* open shopping cart */
@@ -143,7 +145,9 @@ nav li:last-of-type{
 
 
 figcaption{
-  display: inline;
+  position: absolute;
+  left: 0;
+  top:-200px;
 }
 
 
