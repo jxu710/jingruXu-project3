@@ -35,17 +35,17 @@ function App() {
     const database = getDatabase(firebase);
 
     // variable that reference the specific location of our database
-    const dbRef = ref(database);
+    const dbRef = ref(database, );
 
     onValue(dbRef, (response) =>{
-      // console.log(response.val())
+      // console.log(response.val().inventory)
 
       const newState = [];
-      const data = response.val();
+      const data = response.val().inventory;
+      // console.log(data)
     
       for (let key in data){
          newState.push(data[key])
-        // console.log(newState)
       }
 
       setPictures(newState);
@@ -57,16 +57,17 @@ function App() {
 
       <Header handleCart={handleCart} count ={count} />
       {
-       pictures.map( (pics,index) => {
+       pictures.map( (pics) => {
          return(
-          //  <li>
           <div className='imgContainer'>
-            <img src={pics} key={index} alt="mugs"/>
-            <button onClick={add} key={index}>add to cart</button>
-            <button onClick={minus} key={index}>Delete</button>
-            <figcaption>$5</figcaption>
+            <img src={pics.imgUrl} alt="mugs"/>
+            <figcaption>{pics.title}</figcaption>
+            <p>${pics.price}</p>
+          <div className="buttonContainer">
+              <button onClick={add}>add to cart</button>
+              <button onClick={minus}>Delete</button>
+            </div>
           </div>
-          //  {/* </li> */}
          )
         })
       }
@@ -75,16 +76,16 @@ function App() {
   
 
       {/* when open shopping cart */}
-      <nav className={openCart && 'cart'}>
+      <nav className={openCart ? 'cart' : null}>
         <ul>
-          <li><img className='imgAdded' src={pictures[1]} alt="" /></li>
-          <li onClick={handleCart} className={openCart && 'cart'}>x</li>
+          <li><img className='imgAdded' src={pictures} alt="" /></li>
+          <li onClick={handleCart}>x</li>
           <p> Your total Amount:</p>
         </ul>
       </nav>
       
       <footer>
-        <p> Created at Juno</p>
+        <p> Created at Juno ☕</p>
       </footer>
     </div>
   );
