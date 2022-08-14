@@ -11,7 +11,6 @@ html { box-sizing: border-box;}
 
 #root{
   position: relative;
-  height: 100%
 }
 
 #root::before{
@@ -26,13 +25,14 @@ html { box-sizing: border-box;}
 }
 
 header{
-  height: 50vh;
+  height: 30vh;
 }
 
 
 h1{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-top: 100px;
+  display: inline-block;
 }
 
 /* .logo{
@@ -76,7 +76,7 @@ img{
 }
 
 img:hover{
-  transform:scale(0.9);
+  transform:scale(1.2);
 }
 
 p{
@@ -85,7 +85,7 @@ p{
   font-size: 2rem;
 }
 
-.imgContainer{
+.itemContainer{
   display: inline;
   width: 100vw;
   position: relative;
@@ -117,7 +117,7 @@ img ~ button{
 
 nav{
   background-color: lightcoral;
-  width: 20%;
+  width: 50%;
   position: absolute;
   top: 10%;
   left: 0px;
@@ -125,9 +125,18 @@ nav{
   visibility: hidden;
 }
 
-nav li{
+/* nav li::marker{
+  content: '☕';
+} */
+
+/* nav li {
   list-style: none;
-}
+} */
+
+/* nav li img{
+  background: none;
+
+} */
 
 nav li:last-of-type{
   position: absolute;
@@ -138,11 +147,6 @@ nav li:last-of-type{
   padding: 10px;
 
 }
-
-.imgAdded{
-  border: none;
-}
-
 
 figcaption{
   position: absolute;
