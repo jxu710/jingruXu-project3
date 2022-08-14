@@ -19,9 +19,6 @@ function App() {
     setCount(count + 1);
 
     const database = getDatabase(firebase);
-    
-
-    // variable that reference the specific location of our database
     const dbRef = ref(database, '/userCart');
 
     const userSelectedItemInfo = {
@@ -30,21 +27,17 @@ function App() {
         imgUrl: userSelectItem.imgUrl,
         title: userSelectItem.title,
         count: userSelectItem.count + 1
-      }
-    }
-    
+      }      
+    }  
     update(dbRef, userSelectedItemInfo)
-
-
   }
 
-  const minus = function (){
-    setCount(count -1);
-    // const database = getDatabase(firebase);
-    // const dbRef = ref(database, '/userCart');
 
-    count <= 0 && setCount (0)
-  }
+  // const minus = function (){
+  //   setCount(count -1);
+
+  //   count <= 0 && setCount (0)
+  // }
 
   const handleCart = function(){
     setCart(!openCart)
@@ -70,16 +63,14 @@ function App() {
     const dbRef = ref(database, );
 
     onValue(dbRef, (response) =>{
-      // console.log(response.val().inventory)
-
+      
       const newInventory = [];
       const newUserCart = [];
       const inventory = response.val().inventory;
       const userCart = response.val().userCart;
-      // console.log(data)
+      console.log(userCart)
     
       for (let key in inventory){
-
         
         // (userCart[key],key)
 
@@ -128,11 +119,11 @@ function App() {
           <div className='itemContainer' key={pics.key}>
             <img src={pics.imgUrl} alt={pics.title}/>
             <figcaption>{pics.title}</figcaption>
-            <p>Price: ${pics.price}</p>
+            <p>${pics.price}</p>
           
             <div className="buttonContainer">
               <button onClick={()=>{add(pics)}}>add to cart</button>
-              <button onClick={minus}>Delete</button>
+              {/* <button onClick={minus}>Delete</button> */}
             </div>
           </div>
          )
@@ -152,21 +143,19 @@ function App() {
                   {/* <p>{cart.price}</p> */}
                   <article>count: x {cart.count}</article>
                   <p>Amount: ${itemAmount}</p>
-
-
                 </li>
               )
               
             })
           }
 
+          <p> Your total Amount: ${}  </p>
           <li onClick={handleCart}>x</li>
-          <p> Your total Amount: </p>
         </ul>
       </nav>
       
       <footer>
-        <p> Created at Juno ☕</p>
+        <p> Created at Juno College ☕</p>
       </footer>
     </div>
   );

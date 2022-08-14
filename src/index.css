@@ -24,6 +24,7 @@ html { box-sizing: border-box;}
   opacity: 0.5;
 }
 
+
 header{
   height: 30vh;
 }
@@ -66,17 +67,18 @@ i:hover{
 
 
 img{
-  width: 30%;
+  width: 300px;
   height: 200px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 20px;
-  border: darkcyan 2px double;
+  /* border: darkcyan 2px double; */
   transition: all 0.5s ease;
   background-color: lightgrey;
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
 }
 
 img:hover{
-  transform:scale(1.2);
+  transform:scale(1.35);
 }
 
 p{
@@ -99,10 +101,10 @@ p{
   left: 0;
   bottom:0;
   padding: 10px;
-}
+} */
 
 
-img ~ button{
+/* img ~ button{
   position: absolute;
   right: 0;
   bottom: 0;
@@ -116,22 +118,24 @@ img ~ button{
 }
 
 nav{
-  background-color: lightcoral;
-  width: 50%;
-  position: absolute;
-  top: 10%;
-  left: 0px;
-  /* z-index: 2; */
+  background:linear-gradient(to bottom right, #fff,lightgrey);
+  width: 40%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   visibility: hidden;
-}
+  overflow:scroll;
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
 
+}
 /* nav li::marker{
   content: '☕';
 } */
 
-/* nav li {
-  list-style: none;
-} */
+nav li {
+  max-height: inherit;
+}
 
 /* nav li img{
   background: none;
@@ -143,15 +147,24 @@ nav li:last-of-type{
   top: 0;
   right: 0;
   cursor: pointer;
-  background-color: palegoldenrod;
   padding: 10px;
-
+  list-style: none;
+  font-size: 2rem;
 }
+
+nav li:last-of-type:hover{
+  background-color: lightsteelblue;
+}
+
+
+
+
 
 figcaption{
   position: absolute;
   left: 0;
-  top:-200px;
+  top:-210px;
+  font-size: 1.5rem;
 }
 
 
