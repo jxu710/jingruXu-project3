@@ -3,9 +3,9 @@
 const Header = (props) =>{
     return(
     <header>
-    <h1>Welcome to the store!!!</h1>
+    <h1>Welcome to the store!!!~~~</h1>
     <i className="fa-solid fa-cart-shopping " onClick={props.handleCart}>
-      <p onClick={props.handleCart}>{props.count} </p>
+      <p onClick={props.handleCart}>{props.totalCount} </p>
     </i>        
   </header>
     )
@@ -13,3 +13,5 @@ const Header = (props) =>{
 }
 
 export default Header;
+
+
