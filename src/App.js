@@ -93,7 +93,7 @@ function App() {
     const database = getDatabase(firebase);
     const itemsToRemove = userRemoveItem.key
     
-    const address = `userSelectedCart/${itemsToRemove}`
+    const address = `userSelectedCart/${itemsToRemove}`;
 
     const dbRef = ref(database, `/${address}`);
 
@@ -147,8 +147,7 @@ function App() {
                <p>${pics.price}</p>
              
                <div className="buttonContainer">
-                 <button onClick={()=>{add(pics)}}>add to cart</button>
-                 {/* <button onClick={minus}>Delete</button> */}
+                 <button onClick={()=>{add(pics)}}>Add to cart</button>
                </div>
              </div>
             )
@@ -181,8 +180,8 @@ function App() {
             )
           }
 
-          <p> -Your total Amount: ${totalAmountCalculator(userCart)}  </p>
-          <li onClick={handleCart}>❌</li>
+          <p> ☕ Your total Amount: ${totalAmountCalculator(userCart)}  </p>
+          <li className='crossMark' onClick={handleCart}>❌</li>
         </ul>
       </nav>
 

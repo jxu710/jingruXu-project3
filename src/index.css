@@ -77,11 +77,13 @@ img{
   transition: all 0.5s ease;
   background-color: lightgrey;
   box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
+  position: relative;
 }
 
 img:hover{
   transform:scale(1.35);
 }
+
 
 p{
   display: inline-block;
@@ -96,8 +98,22 @@ p{
 }
 
 .buttonContainer{
-  display: inline-block;
+  /* display: inline-block; */
+  position: absolute;
+  left: 30%;
+  bottom:80% ;
+  opacity: 0.7;
 }
+.buttonContainer button{
+  padding: 10px 30px;
+  background-color: antiquewhite;
+  border: none;
+}
+
+.buttonContainer:hover{
+  opacity: 1;
+}
+
 
 /* open shopping cart */
 .cart{
@@ -124,23 +140,19 @@ nav li {
   max-height: inherit;
 }
 
-/* nav li img{
-  background: none;
-
-} */
-
-nav li:last-of-type{
+.crossMark{
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
   padding: 10px;
-  list-style: none;
   font-size: 2rem;
+  list-style: none;
 }
 
-nav li:last-of-type:hover{
+.crossMark:hover{
   background-color: lightsteelblue;
+  
 }
 
 nav li img{
@@ -150,9 +162,9 @@ nav li img{
 nav li img:hover{
   transform: none;
 }
-
-
-
+nav li button {
+  margin-left: 80px;
+}
 
 figcaption{
   position: absolute;
