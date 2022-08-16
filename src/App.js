@@ -1,7 +1,7 @@
 
 import './App.css';
 import firebase from './firebase';
-import { getDatabase, ref, onValue, update} from 'firebase/database';
+import { getDatabase, ref, onValue, update,remove} from 'firebase/database';
 import { useState, useEffect } from 'react';
 
 import Header from './components/Header';
@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 
 function App() {
   const [pictures, setPictures] = useState([]);
-  const [count, setCount] = useState(0);
   const [openCart, setCart] = useState(false);
 
   const [userCart, setUserCart] = useState ([]);
@@ -29,21 +28,21 @@ function App() {
       const newInventory = [];
       const newUserCart = [];
       const inventory = response.val().inventory;
-      const userCart = response.val().userCart;
-      // console.log(userCart)
+      const userSelectedCart = response.val().userSelectedCart;
+      // console.log(userSelectedCart)
     
       for (let key in inventory){
         
         // (userCart[key],key)
-
+        // console.log(inventory[key])
         newInventory.push(
           {
             key,
             title: inventory[key].title,
             imgUrl:inventory[key].imgUrl,
             price:inventory[key].price,
-            count: !userCart[key] ? 0 : userCart[key].count
-            // above code means :  if the userCart does not contain the key, we will set the count to 0, otherwise we get the count from userCart 
+            // if the userSelectedCart does not contain the key, we will set the count to 0, otherwise we get the count from userSelectedCart 
+            count: userSelectedCart[key] ? userSelectedCart[key].count : 0
             
           }
           )
@@ -51,30 +50,30 @@ function App() {
           // console.log(key)
       }
 
-      for( let key in userCart){
+      for( let key in userSelectedCart){
 
         newUserCart.push(
           {
             key,
-            title: userCart[key].title,
-            imgUrl:userCart[key].imgUrl,
-            price:userCart[key].price,
-            count: userCart[key].count
+            title: userSelectedCart[key].title,
+            imgUrl:userSelectedCart[key].imgUrl,
+            price:userSelectedCart[key].price,
+            count: userSelectedCart[key].count
           })
       }
       setPictures(newInventory);
-      
+
       setUserCart(newUserCart);
 
     })
   },[])
 
 
+  // function when user click add to cart button
   const add = function(userSelectItem){
-    setCount(count + 1);
 
     const database = getDatabase(firebase);
-    const dbRef = ref(database, '/userCart');
+    const dbRef = ref(database, '/userSelectedCart');
 
     const userSelectedItemInfo = {
       [userSelectItem.key]:{
@@ -88,20 +87,31 @@ function App() {
   }
 
 
-  // const minus = function (){
-  //   setCount(count -1);
+  // when user click delete from cart inside shopping cart Nav
+  const minus = function (userRemoveItem){
+    
+    const database = getDatabase(firebase);
+    const itemsToRemove = userRemoveItem.key
+    
+    const address = `userSelectedCart/${itemsToRemove}`
 
-  //   count <= 0 && setCount (0)
-  // }
+    const dbRef = ref(database, `/${address}`);
+
+    console.log(itemsToRemove)
+    remove(dbRef,itemsToRemove)
+
+  }
+
 
   const handleCart = function(){
     setCart(!openCart)
   }
 
-  const getTotalCount = function(userCart){
+  // updated the shopping cart number 
+  const getTotalCount = function(shoppingCart){
     let totalCount = 0;
-    userCart.forEach((item)=>{
-      totalCount += item.count
+    shoppingCart.forEach((item)=>{
+      totalCount = totalCount + item.count
       // for every item, increase the totalcount by the item.count
     })
 
@@ -111,7 +121,7 @@ function App() {
 
 
 
-  // 试一下玩
+  // function to calculate total amount 
   const totalAmountCalculator = (userPickedItems)=>{
     let totalAmount = 0
     userPickedItems.forEach((item)=>{
@@ -152,18 +162,18 @@ function App() {
         <ul>
           {
             userCart && (
-
               userCart.map((cart)=>{
+                // console.log(cart.key)
                 // get the amount for each item added to cart
                 const itemAmount = cart.count * cart.price;
                 return(
                   <li key={cart.key}>
                     <img src={cart.imgUrl} alt={cart.title} />
                     {/* <p> {cart.title}</p> */}
-                    {/* <p>{cart.price}</p> */}
-                    <article>count: x {cart.count}</article>
+                    {/* <p>${cart.price}</p> */}
+                    <article>Quantity: {cart.count}</article>
                     <p>Amount: ${itemAmount}</p>
-                    <button>remove from cart</button>
+                    <button onClick={()=>{minus(cart)}}>remove 🗑️</button>
                   </li>
                 )
                 
@@ -172,7 +182,7 @@ function App() {
           }
 
           <p> -Your total Amount: ${totalAmountCalculator(userCart)}  </p>
-          <li onClick={handleCart}>x</li>
+          <li onClick={handleCart}>❌</li>
         </ul>
       </nav>
 
