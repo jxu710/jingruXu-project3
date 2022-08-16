@@ -15,7 +15,7 @@ const DisplayCart = (props) =>{
                                     {/* <p>${cart.price}</p> */}
                                     <article>Quantity: ({cart.count} items)</article>
                                     <p>Amount: ${itemAmount}</p>
-                                    <button onClick={()=>{props.minus(cart)}}>Remove From Cart 🗑️</button>
+                                    <button onClick={()=>{props.minus(cart.key)}}>Remove From Cart 🗑️</button>
                                 </li>
                             )
                 

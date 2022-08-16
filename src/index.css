@@ -6,9 +6,7 @@ html { box-sizing: border-box;}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-/* header style */
-
-
+/* general style */
 #root{
   position: relative;
   text-align: center;
@@ -24,6 +22,8 @@ html { box-sizing: border-box;}
   z-index: -1;
   opacity: 0.5;
 }
+
+/* header style */
 
 
 header{
@@ -46,8 +46,6 @@ h1{
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 } */
 
-
-
 i{
 
   color: black;
@@ -67,7 +65,7 @@ i:hover{
   transform: translateX(20px);
 }
 
-
+/* img and its siblings style */
 img{
   width: 400px;
   height: 300px;
@@ -114,8 +112,17 @@ p{
   opacity: 1;
 }
 
+figcaption{
+  position: absolute;
+  left: 0;
+  bottom:-30px;
+  font-size: 1.7rem;
+  color: salmon;
+}
 
-/* open shopping cart */
+
+/* open shopping cart style*/
+
 .cart{
   visibility: visible;
 }
@@ -188,13 +195,6 @@ nav ul button{
 
 }
 
-figcaption{
-  position: absolute;
-  left: 0;
-  bottom:-30px;
-  font-size: 1.7rem;
-  color: salmon;
-}
 
 /* footer style */
 
@@ -206,4 +206,9 @@ footer{
 }
 footer p{
   margin: 0;
+}
+
+/* media query */
+@media(max-width:1200px){
+  
 }

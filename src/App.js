@@ -12,7 +12,6 @@ import DisplayCart from './components/DisplayCart';
 function App() {
   const [pictures, setPictures] = useState([]);
   const [openCart, setCart] = useState(false);
-
   const [userCart, setUserCart] = useState ([]);
 
   // when page loads, call useEffect to connect to firebase and load data from the "inventory" object 
@@ -29,12 +28,12 @@ function App() {
       const newInventory = [];
       const newUserCart = [];
       const inventory = response.val().inventory;
-      const userSelectedCart = response.val().userSelectedCart;
+      const userSelectedCart = response.val().userSelectedCart || [];
       // console.log(userSelectedCart)
     
       for (let key in inventory){
         
-        // (userCart[key],key)
+        // console.log(userCart[key],key)
         // console.log(inventory[key])
         newInventory.push(
           {
@@ -91,14 +90,9 @@ function App() {
   const minus = function (userRemoveItem){
     
     const database = getDatabase(firebase);
-    const itemsToRemove = userRemoveItem.key
-    
-    const address = `userSelectedCart/${itemsToRemove}`;
 
-    const dbRef = ref(database, `/${address}`);
-
-    // console.log(itemsToRemove)
-    remove(dbRef,itemsToRemove)
+    const dbRef = ref(database, `userSelectedCart/${userRemoveItem}`);
+    remove(dbRef,userRemoveItem)
   }
 
   // 
