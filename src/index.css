@@ -11,6 +11,7 @@ html { box-sizing: border-box;}
 
 #root{
   position: relative;
+  text-align: center;
 }
 
 #root::before{
@@ -26,7 +27,7 @@ html { box-sizing: border-box;}
 
 
 header{
-  height: 50vh;
+  height: 60vh;
 }
 
 
@@ -97,7 +98,6 @@ p{
 }
 
 .buttonContainer{
-  /* display: inline-block; */
   position: absolute;
   left: 23%;
   bottom:30% ;
