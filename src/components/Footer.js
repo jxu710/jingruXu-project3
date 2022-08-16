@@ -3,7 +3,7 @@
 const Footer = ()=>{
     return(
     <footer>
-        <p> Created at Juno College ☕</p>
+        <p> ☕ Created at Juno College of Technology</p>
     </footer>
 
     )

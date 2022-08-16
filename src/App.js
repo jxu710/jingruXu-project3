@@ -142,13 +142,13 @@ function App() {
           pictures.map( (pics) => {
            return(
              <div className='itemContainer' key={pics.key}>
-               <img src={pics.imgUrl} alt={pics.title}/>
-               <figcaption>{pics.title}</figcaption>
-               <p>${pics.price}</p>
+                <img src={pics.imgUrl} alt={pics.title}/>
+                <figcaption>{pics.title}</figcaption>
+                <p>${pics.price}</p>
              
-               <div className="buttonContainer">
-                 <button onClick={()=>{add(pics)}}>Add to cart</button>
-               </div>
+                <div className="buttonContainer">
+                  <button onClick={()=>{add(pics)}}>Add to cart</button>
+                </div>
              </div>
             )
           })
@@ -170,9 +170,9 @@ function App() {
                     <img src={cart.imgUrl} alt={cart.title} />
                     {/* <p> {cart.title}</p> */}
                     {/* <p>${cart.price}</p> */}
-                    <article>Quantity: {cart.count}</article>
+                    <article>Quantity: ({cart.count} items)</article>
                     <p>Amount: ${itemAmount}</p>
-                    <button onClick={()=>{minus(cart)}}>remove 🗑️</button>
+                    <button onClick={()=>{minus(cart)}}>Remove From Cart 🗑️</button>
                   </li>
                 )
                 
@@ -180,7 +180,7 @@ function App() {
             )
           }
 
-          <p> ☕ Your total Amount: ${totalAmountCalculator(userCart)}  </p>
+          <p> ☕ Subtotal: ${totalAmountCalculator(userCart)}</p>
           <li className='crossMark' onClick={handleCart}>❌</li>
         </ul>
       </nav>

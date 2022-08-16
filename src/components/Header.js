@@ -2,12 +2,13 @@
 
 const Header = (props) =>{
     return(
-    <header>
-    <h1>Welcome to the store!!!~~~</h1>
-    <i className="fa-solid fa-cart-shopping " onClick={props.handleCart}>
-      <p onClick={props.handleCart}>{props.totalCount} </p>
-    </i>        
-  </header>
+
+      <header>
+        <h1>Welcome to the store!!!~~~</h1>
+        <i className="fa-solid fa-cart-shopping " onClick={props.handleCart}>
+        <p onClick={props.handleCart}>{props.totalCount} </p>
+        </i>        
+      </header>
     )
 
 }
