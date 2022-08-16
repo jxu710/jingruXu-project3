@@ -72,14 +72,9 @@ img{
   object-fit: cover;
   border-radius: 20px;
   /* border: darkcyan 2px double; */
-  transition: all 0.5s ease;
   background-color: lightgrey;
   box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
   position: relative;
-}
-
-img:hover{
-  transform:scale(1.15);
 }
 
 
@@ -97,7 +92,7 @@ p{
 
 .buttonContainer{
   position: absolute;
-  left: 23%;
+  left: 20%;
   bottom:30% ;
   opacity: 0.7;
 }
@@ -121,7 +116,7 @@ figcaption{
 }
 
 
-/* open shopping cart style*/
+/*  shopping cart style*/
 
 .cart{
   visibility: visible;
@@ -146,6 +141,16 @@ nav li {
   list-style: none;
 }
 
+nav li img{
+  transition: none;
+  width:250px;
+  height: 200px;
+}
+
+nav li img:hover{
+  transform:scale(1.15);
+}
+
 .crossMark{
   position: absolute;
   top: 0;
@@ -163,18 +168,11 @@ nav li {
   
 }
 
-nav li img{
-  transition: none;
-  width:250px;
-  height: 200px;
-}
 article{
   font-size: 1.2rem;
 }
 
-nav li img:hover{
-  transform: none;
-}
+
 nav li button {
   margin-left: 80px;
 }
@@ -195,6 +193,11 @@ nav ul button{
 
 }
 
+.shoppingCartTitle{
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
 
 /* footer style */
 
@@ -210,5 +213,5 @@ footer p{
 
 /* media query */
 @media(max-width:1200px){
-  
+
 }

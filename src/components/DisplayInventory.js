@@ -10,7 +10,7 @@ const DisplayInventory = (props) =>{
                      <p>${pics.price}</p>
                   
                      <div className="buttonContainer">
-                       <button onClick={()=>{props.add(pics)}}>Add to cart</button>
+                       <button onClick={()=>{props.add(pics)}}>ADD TO CART</button>
                      </div>
                   </div>
                  )

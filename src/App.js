@@ -14,6 +14,9 @@ function App() {
   const [openCart, setCart] = useState(false);
   const [userCart, setUserCart] = useState ([]);
 
+  const [filteredItems,setFilteredItems] = useState([])
+  // const [userChoice, setUserChoice] = useState('placeholder')
+
   // when page loads, call useEffect to connect to firebase and load data from the "inventory" object 
   useEffect(()=>{
 
@@ -32,7 +35,6 @@ function App() {
       // console.log(userSelectedCart)
     
       for (let key in inventory){
-        
         // console.log(userCart[key],key)
         // console.log(inventory[key])
         newInventory.push(
@@ -42,7 +44,9 @@ function App() {
             imgUrl:inventory[key].imgUrl,
             price:inventory[key].price,
             // if the userSelectedCart contain the key, we get the count from userSelectedCart. Otherwise we will set the count to 0,
-            count: userSelectedCart[key] ? userSelectedCart[key].count : 0
+            count: userSelectedCart[key] ? userSelectedCart[key].count : 0,
+
+            value:inventory[key].value
             
           }
           )
@@ -58,16 +62,24 @@ function App() {
             title: userSelectedCart[key].title,
             imgUrl:userSelectedCart[key].imgUrl,
             price:userSelectedCart[key].price,
-            count: userSelectedCart[key].count
+            count: userSelectedCart[key].count,
+            value:userSelectedCart[key].value
           })
       }
       setPictures(newInventory);
-
       setUserCart(newUserCart);
-
+      
     })
   },[])
 
+  const handleUserChoice = (e)=>{
+    const ItemsFilter = pictures.filter((item)=>{
+      return item.value === e.target.value
+    })
+    setFilteredItems(ItemsFilter)
+    // console.log(filteredItems)
+  }
+  
 
   // function when user click add to cart button
   const add = function(userSelectItem){
@@ -95,7 +107,7 @@ function App() {
     remove(dbRef,userRemoveItem)
   }
 
-  // 
+  // function to change the state variable userCart from false to true 
   const handleCart = function(){
     setCart(!openCart)
   }
@@ -119,12 +131,13 @@ function App() {
     return totalAmount
   }
 
+
   return (
     <div className="App">
 
-      <Header handleCart={handleCart} totalCount ={getTotalCount(userCart)} />
+      <Header handleCart={handleCart} totalCount ={getTotalCount(userCart)} pictures={pictures} handleUserChoice={handleUserChoice}/>
 
-      <DisplayInventory  pictures = {pictures} add={add}/>
+      <DisplayInventory  pictures = {filteredItems.length !== 0 ? filteredItems : pictures} add={add}/>
 
       <DisplayCart userCart = {userCart} openCart={openCart} minus={minus} totalAmountCalculator={totalAmountCalculator} handleCart={handleCart} />
 

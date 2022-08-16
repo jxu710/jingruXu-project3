@@ -2,6 +2,9 @@ const DisplayCart = (props) =>{
     return(
         <nav className={props.openCart ? 'cart' : null}>
             <ul>
+                <div className="shoppingCartTitle">
+                    <h2>Your Cart</h2>
+                </div>
                 {
                     props.userCart && (
                         props.userCart.map((cart)=>{
