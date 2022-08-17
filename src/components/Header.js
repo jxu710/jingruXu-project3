@@ -11,7 +11,7 @@ const Header = (props) =>{
         </i> 
         
 
-        <div className="filterMenu">
+        {/* <div className="filterMenu">
           <form>
             <h3>Filter items by:</h3>
             <select 
@@ -25,7 +25,7 @@ const Header = (props) =>{
               <option value="coffee">Coffee mugs</option>
             </select>
           </form>
-        </div>       
+        </div>        */}
       </header>
     )
 
