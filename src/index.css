@@ -52,6 +52,10 @@ i{
   transition: all 0.5s;
   z-index: 1;
   opacity: 1;
+  background-color: antiquewhite;
+  padding: 20px;
+  padding-bottom: 0px;
+  border-radius: 50%;
 }
 
 i:hover, i:focus{
@@ -105,6 +109,7 @@ p{
   padding: 10px 60px;
   background-color: antiquewhite;
   border: none;
+  font-family: 'Indie Flower', cursive;
 }
 
 .buttonContainer:hover, .buttonContainer:focus {
@@ -214,7 +219,7 @@ footer{
   opacity: 0.6;
 }
 footer p{
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: 'Indie Flower', cursive;
   margin: 0;
 }
 
@@ -224,6 +229,7 @@ form{
   position: absolute;
   left: 7vw;
   top: 300px;
+  font-family: 'Indie Flower', cursive;
 }
 form h3{
   margin: 0;
@@ -237,6 +243,7 @@ select{
   border: none;
   box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
   border-radius: 5px;
+  font-family: 'Indie Flower', cursive;
 }
 
 
