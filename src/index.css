@@ -7,6 +7,7 @@ html { box-sizing: border-box;}
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
 /* general style */
+
 #root{
   position: relative;
   text-align: center;
@@ -32,19 +33,12 @@ header{
 
 
 h1{
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:'Pacifico', cursive;;
   padding-top: 100px;
   display: inline-block;
+  font-size: 4rem;
+  transform: rotate(5deg);
 }
-
-/* .logo{
-  border-radius: 50%;
-  border-style: none;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-} */
 
 i{
 
@@ -54,14 +48,13 @@ i{
   top: 10vh;
   right: 10vh;
   cursor: pointer;
-  /* padding: 10px; */
   font-size: 3rem;
   transition: all 0.5s;
   z-index: 1;
   opacity: 1;
 }
 
-i:hover{
+i:hover, i:focus{
   transform: translateX(20px);
 }
 
@@ -74,7 +67,6 @@ img{
   background-color: whitesmoke;
   box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
   position: relative;
-  /* border: darkcyan 2px double; */
   padding: 40px;
   margin-inline: 20px;
   margin-block: 10px;
@@ -86,12 +78,20 @@ p{
   display: inline-block;
   color: black;
   font-size: 1.8rem;
+  font-family: 'Indie Flower', cursive;
 }
 
 .itemContainer{
   display: inline;
   width: 100vw;
   position: relative;
+}
+
+.itemContainer p {
+  position: absolute;
+  bottom: 245px;
+  right: 60px;
+  
 }
 
 .buttonContainer{
@@ -107,14 +107,14 @@ p{
   border: none;
 }
 
-.buttonContainer:hover{
+.buttonContainer:hover, .buttonContainer:focus {
   opacity: 1;
 }
 
 figcaption{
-
+  font-family: 'Indie Flower', cursive;
   position: absolute;
-  left: 35px;
+  left: 63px;
   top: -290px;
   font-size: 1.5rem;
 }
@@ -137,7 +137,10 @@ nav{
   overflow:scroll;
   box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
   z-index: 10;
+}
 
+nav h2{
+  font-size: 2rem;
 }
 
 nav li {
@@ -146,13 +149,13 @@ nav li {
 }
 
 nav li img{
-  transition: none;
+  transition: all 300ms;
   width:250px;
   height: 200px;
   padding: 0;
 }
 
-nav li img:hover{
+nav li img:hover, nav li img:focus{
   transform:scale(1.15);
 }
 
@@ -166,23 +169,27 @@ nav li img:hover{
   display: block;
   font-size: 2rem;
   list-style: none;
+  transition: all 300ms;
 }
 
 .crossMark:hover{
-  background-color: burlywood;
+  font-size: 2.8rem;
   
 }
 
 article{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-family: 'Indie Flower', cursive;
 }
 
 
 nav li button {
   margin-left: 80px;
+  font-family: 'Indie Flower', cursive;
 }
 
 nav ul > p{
+  font-family: 'Indie Flower', cursive;
   padding-top: 50px;
   color: chocolate;
   margin-top: 0;
@@ -213,6 +220,7 @@ footer{
   opacity: 0.6;
 }
 footer p{
+  font-family:Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -220,11 +228,11 @@ footer p{
 
 form{
   position: absolute;
-  left: 5vw;
+  left: 7vw;
   top: 300px;
 }
 form h3{
-   margin: 0;
+  margin: 0;
   padding-block: 5px;
 }
 
@@ -236,6 +244,7 @@ select{
   box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
   border-radius: 5px;
 }
+
 
 
 /* media query */

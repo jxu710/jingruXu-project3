@@ -72,6 +72,7 @@ function App() {
     })
   },[])
 
+  // event listener pass to header component, filter items based on value "coffee" or "beer"
   const handleUserChoice = (e)=>{
     const ItemsFilter = pictures.filter((item)=>{
       return item.value === e.target.value

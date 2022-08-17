@@ -5,10 +5,11 @@ const Header = (props) =>{
     return(
 
       <header>
-        <h1>Welcome to the store!!!~~~</h1>
+        <h1>Hug in a 'Mug'!</h1>
         <i className="fa-solid fa-cart-shopping " onClick={props.handleCart}>
         <p onClick={props.handleCart}>{props.totalCount} </p>
         </i> 
+        
 
         <div className="filterMenu">
           <form>
