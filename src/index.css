@@ -1,13 +1,297 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+html { box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+/* general style */
+
+#root{
+  position: relative;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root::before{
+  content: '';
+  background: url(./images/annie-spratt-VvE9lcIQ5Xo-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
+
+/* header style */
+
+
+header{
+  height: 50vh;
+}
+
+
+h1{
+  font-family:'Pacifico', cursive;;
+  padding-top: 100px;
+  display: inline-block;
+  font-size: 4rem;
+  transform: rotate(5deg);
+}
+
+i{
+
+  color: black;
+  position: absolute;
+  position: fixed;
+  top: 10vh;
+  right: 10vh;
+  cursor: pointer;
+  font-size: 3rem;
+  transition: all 0.5s;
+  z-index: 1;
+  opacity: 1;
+  background-color: antiquewhite;
+  padding: 20px;
+  padding-bottom: 0px;
+  border-radius: 50%;
+}
+
+i:hover, i:focus{
+  transform: translateX(20px);
+}
+
+/* img and its siblings style */
+img{
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
+  position: relative;
+  padding: 40px;
+  margin-inline: 20px;
+  margin-block: 10px;
+
+}
+
+
+p{
+  display: inline-block;
+  color: black;
+  font-size: 1.8rem;
+  font-family: 'Indie Flower', cursive;
+}
+
+.itemContainer{
+  display: inline;
+  width: 100vw;
+  position: relative;
+}
+
+.itemContainer p {
+  position: absolute;
+  bottom: 245px;
+  right: 60px;
+  
+}
+
+.buttonContainer{
+  position: absolute;
+  left: 22%;
+  bottom:88% ;
+  opacity: 0.7;
+}
+
+.buttonContainer button{
+  padding: 10px 60px;
+  background-color: antiquewhite;
+  border: none;
+  font-family: 'Indie Flower', cursive;
+}
+
+.buttonContainer:hover, .buttonContainer:focus {
+  opacity: 1;
+}
+
+figcaption{
+  font-family: 'Indie Flower', cursive;
+  position: absolute;
+  left: 63px;
+  top: -290px;
+  font-size: 1.5rem;
+}
+
+
+/*  shopping cart style*/
+
+.cart{
+  visibility: visible;
+}
+
+nav{
+  background:linear-gradient(to bottom right, #fff,lightgrey);
+  width: 40%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  overflow:scroll;
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
+  z-index: 10;
+}
+
+nav h2{
+  font-size: 2rem;
+}
+
+nav li {
+  max-height: inherit;
+  list-style: none;
+}
+
+nav li img{
+  width:250px;
+  height: 200px;
+  padding: 0;
+}
+
+nav li img:hover, nav li img:focus{
+  transform:scale(1.15);
+}
+
+.crossMark{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 15px;
+  display: block;
+  font-size: 2rem;
+  list-style: none;
+}
+
+.crossMark:hover, .crossMark:focus{
+  font-size: 2.8rem;
+  
+}
+
+article{
+  font-size: 1.3rem;
+  font-family: 'Indie Flower', cursive;
+}
+
+nav ul > p{
+  font-family: 'Indie Flower', cursive;
+  padding-top: 50px;
+  color: chocolate;
+  margin-top: 0;
+  text-decoration: underline double 2px;
+  text-underline-offset: 20px;
+}
+
+nav ul button{
+  border: 1px black solid;
+  border-radius: 15px;
+  padding: 5px;
+  font-size: 1.2rem;
+  margin-left: 80px;
+  font-family: 'Indie Flower', cursive;
+
+}
+
+.shoppingCartTitle{
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+
+/* footer style */
+
+footer{
+  margin-top: 50px;
+  background-color: chocolate;
+  padding-block: 10px;
+  opacity: 0.6;
+}
+footer p{
+  font-family: 'Indie Flower', cursive;
+  margin: 0;
+}
+
+/* filter button style */
+
+form{
+  position: absolute;
+  left: 7vw;
+  top: 300px;
+  font-family: 'Indie Flower', cursive;
+}
+form h3{
+  margin: 0;
+  padding-block: 5px;
+}
+
+select{
+  padding-left: 10px;
+  padding: 8px;
+  background-color: antiquewhite;
+  border: none;
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,.521);
+  border-radius: 5px;
+  font-family: 'Indie Flower', cursive;
+}
+
+
+
+/* media query */
+@media(max-width:1200px){
+  header {
+    height: 30vh;
+  }
+
+  form{
+    left: 15vw;
+  }
+}
+
+
+@media(max-width:1000px){
+nav ul button{
+  display: block;
+}
+}
+
+
+@media(max-width:700px){
+  nav{
+    width: 60%;
+  }
+  nav li {
+    margin-block: 30px;
+  }
+  form{
+    left: 25vw;
+  }
+
+  i{
+    top: 5vh;
+  }
+}
+
+@media(max-width:500px){
+  h1{
+    font-size: 3rem;
+  }
+  nav{
+    width: 100vw;
+  }
+  nav ul button{
+    margin-left: 30%;
+  }
+  }
+  
