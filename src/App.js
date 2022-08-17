@@ -133,6 +133,7 @@ function App() {
   return (
     <div className="App">
 
+
       <Header handleCart={handleCart} totalCount ={getTotalCount(userCart)} pictures={pictures} handleUserChoice={handleUserChoice}/>
 
       <DisplayInventory  pictures = {filteredItems.length !== 0 ? filteredItems : pictures} add={add}/>
@@ -140,6 +141,7 @@ function App() {
       <DisplayCart userCart = {userCart} openCart={openCart} minus={minus} totalAmountCalculator={totalAmountCalculator} handleCart={handleCart} />
 
       <Footer />
+
     </div>
   );
   
