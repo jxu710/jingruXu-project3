@@ -149,7 +149,6 @@ nav li {
 }
 
 nav li img{
-  transition: all 300ms;
   width:250px;
   height: 200px;
   padding: 0;
@@ -182,12 +181,6 @@ article{
   font-family: 'Indie Flower', cursive;
 }
 
-
-nav li button {
-  margin-left: 80px;
-  font-family: 'Indie Flower', cursive;
-}
-
 nav ul > p{
   font-family: 'Indie Flower', cursive;
   padding-top: 50px;
@@ -202,6 +195,8 @@ nav ul button{
   border-radius: 15px;
   padding: 5px;
   font-size: 1.2rem;
+  margin-left: 80px;
+  font-family: 'Indie Flower', cursive;
 
 }
 
@@ -249,5 +244,48 @@ select{
 
 /* media query */
 @media(max-width:1200px){
+  header {
+    height: 30vh;
+  }
 
+  form{
+    left: 15vw;
+  }
 }
+
+
+@media(max-width:1000px){
+nav ul button{
+  display: block;
+}
+}
+
+
+@media(max-width:700px){
+  nav{
+    width: 60%;
+  }
+  nav li {
+    margin-block: 30px;
+  }
+  form{
+    left: 25vw;
+  }
+
+  i{
+    top: 5vh;
+  }
+}
+
+@media(max-width:500px){
+  h1{
+    font-size: 3rem;
+  }
+  nav{
+    width: 100vw;
+  }
+  nav ul button{
+    margin-left: 30%;
+  }
+  }
+  
