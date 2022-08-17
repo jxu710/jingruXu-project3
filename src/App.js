@@ -32,11 +32,10 @@ function App() {
       const newUserCart = [];
       const inventory = response.val().inventory;
       const userSelectedCart = response.val().userSelectedCart || [];
-      // console.log(userSelectedCart)
+      
     
       for (let key in inventory){
-        // console.log(userCart[key],key)
-        // console.log(inventory[key])
+
         newInventory.push(
           {
             key,
@@ -50,8 +49,6 @@ function App() {
             
           }
           )
-          // console.log(inventory[key].title)
-          // console.log(key)
       }
 
       for( let key in userSelectedCart){
@@ -78,7 +75,7 @@ function App() {
       return item.value === e.target.value
     })
     setFilteredItems(ItemsFilter)
-    // console.log(filteredItems)
+    
   }
   
 
