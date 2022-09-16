@@ -209,6 +209,10 @@ nav ul button{
   margin-bottom: 30px;
 }
 
+nav li button:hover, nav li button:focus{
+  transform:scale(1.15);
+}
+
 
 /* footer style */
 

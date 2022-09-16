@@ -91,8 +91,9 @@ function App() {
         imgUrl: userSelectItem.imgUrl,
         title: userSelectItem.title,
         count: userSelectItem.count + 1
-      }      
+      }
     }  
+    console.log(userSelectItem);      
     update(dbRef, userSelectedItemInfo)
   }
 
@@ -136,7 +137,7 @@ function App() {
 
       <Header handleCart={handleCart} totalCount ={getTotalCount(userCart)} pictures={pictures} handleUserChoice={handleUserChoice}/>
 
-      <DisplayInventory  pictures = {filteredItems.length !== 0 ? filteredItems : pictures} add={add}/>
+      <DisplayInventory  pictures = {filteredItems.length > 0 ? filteredItems : pictures} add={add}/>
 
       <DisplayCart userCart = {userCart} openCart={openCart} minus={minus} totalAmountCalculator={totalAmountCalculator} handleCart={handleCart} />
 
