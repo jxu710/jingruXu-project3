@@ -1,12 +1,11 @@
 // Footer component
 
-const Footer = ()=>{
-    return(
+const Footer = () => {
+  return (
     <footer>
-        <p> ☕ Created at Juno College of Technology</p>
+      <p> ☕ Created by Jingru </p>
     </footer>
-
-    )
-}
+  );
+};
 
 export default Footer;
